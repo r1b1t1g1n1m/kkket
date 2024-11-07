@@ -6,7 +6,7 @@ function getRan(min, max) {
 
 async function checkSignal() {
     let randomNumber1 = getRan(1.1, 1.3).toFixed(2);
-    const url = 'https://lucky-jet-history.gamedev-atech.cc/public/history/api/history/replay';
+    const url = 'https://games.inout.games/api/modes/diver/game?operator=86115cad-e94b-40ac-b3bb-7fb13c946275&auth_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2lkIjoiZjQ3MjViZmMtM2Q4ZC00ZTdkLTgyZWUtZGRjNmM2NjI0MDRiIn0.MIWBa_t1H5yg1qczJrtO8NMAaeLOcZsuJULGdczOgSc&currency=RUB&lang=ru&theme=eyJ1cGRhdGVkQXQiOiIyMDI0LTA0LTIyVDE4OjAzOjU3Ljg2MFoiLCJkaXNhYmxlUG93ZXJlZEJ5IjpmYWxzZSwibG9nb1VybCI6Imh0dHBzOi8vczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vaW5vdXQtYXNzZXRzL2FkbWluLWNhc2luby1sb2dvL3ByZWxvYWRlci9hMmYwYzRkNS03NWJkLTRhMzktOTU3Mi00MzdjZjQ1YTRiMmQiLCJiYWNrZ3JvdW5kQ29sb3IiOiIjMTcxYjM1In0&gameCustomizationId=&lobbyUrl=';
     const response = await fetch(url);
     const data = await response.json();
     const state = data.state;
@@ -93,7 +93,7 @@ async function checkSignal() {
 }
 
 function fetchDataAndUpdate() {
-    fetch('https://lucky-jet-history.gamedev-atech.cc/public/history/api/history/replay')
+    fetch('https://games.inout.games/api/modes/diver/game?operator=86115cad-e94b-40ac-b3bb-7fb13c946275&auth_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2lkIjoiZjQ3MjViZmMtM2Q4ZC00ZTdkLTgyZWUtZGRjNmM2NjI0MDRiIn0.MIWBa_t1H5yg1qczJrtO8NMAaeLOcZsuJULGdczOgSc&currency=RUB&lang=ru&theme=eyJ1cGRhdGVkQXQiOiIyMDI0LTA0LTIyVDE4OjAzOjU3Ljg2MFoiLCJkaXNhYmxlUG93ZXJlZEJ5IjpmYWxzZSwibG9nb1VybCI6Imh0dHBzOi8vczMuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20vaW5vdXQtYXNzZXRzL2FkbWluLWNhc2luby1sb2dvL3ByZWxvYWRlci9hMmYwYzRkNS03NWJkLTRhMzktOTU3Mi00MzdjZjQ1YTRiMmQiLCJiYWNrZ3JvdW5kQ29sb3IiOiIjMTcxYjM1In0&gameCustomizationId=&lobbyUrl=')
         .then(response => response.json())
         .then(data => {
             const kef = parseFloat(data.current_coefficients);
